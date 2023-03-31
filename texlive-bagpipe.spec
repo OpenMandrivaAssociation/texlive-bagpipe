@@ -1,6 +1,6 @@
 Name:		texlive-bagpipe
 Version:	34393
-Release:	1
+Release:	2
 Summary:	Support for typesetting bagpipe music
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/bagpipe
