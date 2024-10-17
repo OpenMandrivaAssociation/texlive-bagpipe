@@ -3,7 +3,7 @@ Version:	34393
 Release:	2
 Summary:	Support for typesetting bagpipe music
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/bagpipe
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/bagpipe
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bagpipe.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bagpipe.doc.r%{version}.tar.xz
