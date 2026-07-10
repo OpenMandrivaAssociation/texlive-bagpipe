@@ -1,37 +1,24 @@
-Name:		texlive-bagpipe
-Version:	34393
-Release:	2
+%global tl_name bagpipe
+%global tl_revision 34393
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	3.02
+Release:	%{tl_revision}.1
 Summary:	Support for typesetting bagpipe music
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/bagpipe
+URL:		https://www.ctan.org/tex-archive/macros/generic/bagpipe
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bagpipe.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/bagpipe.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/bagpipe.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/bagpipe.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Typesetting bagpipe music in MusixTeX is needlessly tedious.
-This package provides specialized and re-defined macros to
-simplify this task.
+Typesetting bagpipe music in MusixTeX is needlessly tedious. This
+package provides specialized and re-defined macros to simplify this
+task.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/generic/bagpipe
-%doc %{_texmfdistdir}/doc/generic/bagpipe
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
